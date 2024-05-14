@@ -151,7 +151,7 @@ def ANDOI(N,I,U1,U2,U3,U1D,U2D,U3D,Y,FF,ierr):
     FF[I+8-1] = -(Y[I+8-1]-VBB)/RBD + IBD(Y[I+8-1]-Y[I+4-1])
     FF[I+9-1] = CGS*U2D - (Y[I+9-1]-Y[I+13-1])/RGS - IDS(2, Y[I+10-1]-Y[I+9-1], U2-Y[I+9-1], Y[I+11-1]-Y[I+13-1], U2-Y[I+10-1], Y[I+12-1]-Y[I+4-1], ierr)
     FF[I+10-1] = CGD*U2D - (Y[I+10-1]-Y[I+4-1])/RGD + IDS(2, Y[I+10-1]-Y[I+9-1], U2-Y[I+9-1], Y[I+11-1]-Y[I+13-1], U2-Y[I+10-1], Y[I+12-1]-Y[I+4-1], ierr)
-    FF[I+11-1] = -(Y[I+1-11]-VBB)/RBS + IBS(Y[I+11-1]-Y[I+13-1])
+    FF[I+11-1] = -(Y[I+11-1]-VBB)/RBS + IBS(Y[I+11-1]-Y[I+13-1])
     FF[I+12-1] = -(Y[I+12-1]-VBB)/RBD + IBD(Y[I+12-1]-Y[I+4-1])
     FF[I+13-1] = -(Y[I+13-1]-Y[I+9-1])/RGS - IBS(Y[I+11-1]-Y[I+13-1]) - (Y[I+13-1]-Y[I+15-1])/RGD - IBD(Y[I+17-1]-Y[I+13-1])
     FF[I+14-1] = CGS*U3D - Y[I+14-1]/RGS - IDS(2, Y[I+15-1]-Y[I+14-1], U3-Y[I+14-1], Y[I+16-1], U3-Y[I+15-1], Y[I+17-1]-Y[I+13-1], ierr)
@@ -326,7 +326,7 @@ def DNOR(N,U,I,G):
     G[I + 1-1] += CGD * (U[I + 1-1] - U[I + 4-1])
     G[I + 2-1] += CBDBS(U[I + 2-1] - U[I + 4-1]) * (U[I + 2-1] - U[I + 4-1])
     G[I + 3-1] += CBDBS(U[I + 3-1] - VDD) * U[I + 3-1]
-    G[I + 4-1] += (CGS * (U[I + 4-1] - U[I-1]) + CGD * (U[I + 4-1] - U[I + 1-1]) + CBDBS(U[I + 2] - U[I + 4]) * (U[I + 4] - U[I + 2]) + CBDBS(U[I + 8] - U[I + 4]) * (U[I + 4] - U[I + 8]) + CBDBS(U[I + 12] - U[I + 4]) * (U[I + 4] - U[I + 12]) + CLOAD * U[I + 4])
+    G[I + 4-1] += (CGS * (U[I + 4-1] - U[I-1]) + CGD * (U[I + 4-1] - U[I + 1-1]) + CBDBS(U[I + 2-1] - U[I + 4-1]) * (U[I + 4-1] - U[I + 2-1]) + CBDBS(U[I + 8-1] - U[I + 4-1]) * (U[I + 4-1] - U[I + 8-1]) + CBDBS(U[I + 12-1] - U[I + 4-1]) * (U[I + 4-1] - U[I + 12-1]) + CLOAD * U[I + 4-1])
     G[I + 5-1] += CGS * U[I + 5-1]
     G[I + 6-1] += CGD * U[I + 6-1]
     G[I + 7-1] += CBDBS(U[I + 7-1]) * U[I + 7-1]
@@ -408,10 +408,7 @@ def DORANI(N,U,I,G):
                  CLOAD * U[I + 4-1])
     G[I + 5-1] += CGS * U[I + 5-1]
     G[I + 6-1] += CGD * U[I + 6-1]
-    G[I + 7-1] += (CBDBS(U[I + 7-1] - U[I + 9-1]) * (U[I + 7-1] - U[I + 9-1]) + \
-                 CBDBS(U[I + 13-1] - U[I + 9-1]) * (U[I + 9-1] - U[I + 13-1]) + \
-                 CBDBS(U[I + 17-1] - U[I + 9-1]) * (U[I + 9-1] - U[I + 17-1]) + \
-                 CLOAD * U[I + 9-1])
+    G[I + 7-1] += CBDBS(U[I + 7-1] - U[I + 9-1]) * (U[I + 7-1] - U[I + 9-1]) 
     G[I + 8-1] += CBDBS(U[I + 8-1] - U[I + 4-1]) * (U[I + 8-1] - U[I + 4-1])
     G[I + 9-1] += (CBDBS(U[I + 7-1] - U[I + 9-1]) * (U[I + 9-1] - U[I + 7-1]) + \
                  CBDBS(U[I + 13-1] - U[I + 9-1]) * (U[I + 9-1] - U[I + 13-1]) + \
