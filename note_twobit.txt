@@ -1,1 +1,3 @@
-NOTE: The Two Bit Adding Unit problem has been solved and plotted in R.
+NOTE: The Two Bit Adding Unit problem has been solved and plotted in R - Twobit_R.png
+
+It has also been solved and plotted in Python - Twobit_P.png
