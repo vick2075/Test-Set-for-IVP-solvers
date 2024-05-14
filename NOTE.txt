@@ -1,0 +1,21 @@
+-----------------------------------------------------------------------------
+
+1) Please note that pleiades.py contains vectorized code and cannot be solved via Scipy.Integrate.
+
+Scipy takes in y0 as 1D array, whereas the initial condition u in code is not 1D!!
+
+-----------------------------------------------------------------------------
+
+2) pleiadesb.py on the other hand is normal code that can be solved via Scipy.Integrate
+
+u is 1D array in this code
+
+-----------------------------------------------------------------------------
+
+3) pleiadesb.py contains two types of code:
+		a) code as per Fortran
+		b) normal n-body system of ODEs
+
+Code for plotting will be different for these two types!
+
+-----------------------------------------------------------------------------
