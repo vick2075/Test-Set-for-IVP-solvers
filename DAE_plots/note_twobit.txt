@@ -1,1 +1,0 @@
-NOTE: The Two Bit Adding Unit problem has been solved and plotted in R.
